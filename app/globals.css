@@ -35,6 +35,18 @@
   }
   html { scroll-behavior: smooth; }
   ::selection { @apply bg-secondary/30; }
+
+  /* Iconsax (Linear/Broken/TwoTone) draws stroke-based icons that rely on React
+     `defaultProps` to default `color` to `currentColor`. Next.js App Router SSR
+     does not apply function-component `defaultProps`, so the served icons lose
+     their stroke/fill and render invisible. Default them to `currentColor` here
+     (Tailwind utilities and explicit colors still take precedence). */
+  svg path[stroke-width] {
+    stroke: currentColor;
+  }
+  svg path:not([stroke-width]) {
+    fill: currentColor;
+  }
 }
 
 @layer utilities {
