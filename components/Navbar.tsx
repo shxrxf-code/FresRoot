@@ -3,7 +3,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { SearchNormal, Heart, ShoppingBag, User, Menu, CloseCircle, ArrowDown2, ArrowRight2, Tag, Home, ShoppingCart, Box } from "iconsax-react";
+import { SearchNormal, Heart, ShoppingBag, User, Menu, CloseCircle, ArrowDown2, ArrowRight2, Tag, Home, ShoppingCart, Box, Tree } from "iconsax-react";
 import { LogoImage } from "./ui/LogoImage";
 import { Avatar } from "./ui/avatar";
 import { useCart } from "@/stores/cart";
@@ -149,12 +149,12 @@ export function Navbar() {
 
       {/* MAIN HEADER */}
       <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all ${scrolled ? "border-b border-border/50 shadow-sm" : ""}`}>
-        <div className="mx-auto w-full px-6 sm:px-8 lg:px-10 xl:px-14 2xl:px-20">
+        <div className="mx-auto w-full px-4 sm:px-8 lg:px-10 xl:px-14 2xl:px-20">
           {/* Top Row */}
           <div className="flex h-16 items-center gap-4 lg:gap-6">
             {/* Logo */}
             <Link href="/" aria-label="FRESROOT home" className="flex shrink-0 items-center leading-none">
-              <LogoImage className="h-9 w-[175px] sm:h-10 sm:w-[195px] lg:h-12 lg:w-[230px]" />
+              <LogoImage className="w-[95px] min-[360px]:w-[130px] min-[400px]:w-[170px] sm:h-10 sm:w-[195px] lg:h-12 lg:w-[230px]" />
             </Link>
 
             {/* Search Bar */}
@@ -171,9 +171,9 @@ export function Navbar() {
             </div>
 
             {/* Right Actions */}
-            <div className="ml-auto flex items-center gap-2 lg:gap-3">
+            <div className="ml-auto flex items-center gap-1 sm:gap-2 lg:gap-3">
               {/* Wishlist */}
-              <Link href="/wishlist" className="relative hidden h-10 w-10 place-items-center rounded-lg text-muted hover:bg-primary/5 hover:text-primary lg:grid" aria-label={t("nav.wishlist")}>
+              <Link href="/wishlist" className="relative grid h-11 w-11 place-items-center rounded-lg text-muted hover:bg-primary/5 hover:text-primary lg:h-10 lg:w-10" aria-label={t("nav.wishlist")}>
                 <Heart size={18} />
                 {mounted && wishCount > 0 && <AnimatedCount count={wishCount} />}
               </Link>
@@ -305,8 +305,8 @@ export function Navbar() {
           <MobileNavItem href="/shop" label={t("nav.shop")} active={isActive("/shop")}>
             <ShoppingCart size={20} variant={isActive("/shop") ? "Bold" : "Linear"} />
           </MobileNavItem>
-          <MobileNavItem href="/wishlist" label={t("nav.wishlist")} active={isActive("/wishlist")} badge={mounted ? wishCount : 0}>
-            <Heart size={20} variant={isActive("/wishlist") ? "Bold" : "Linear"} />
+          <MobileNavItem href="/farms" label={t("nav.ourFarms")} active={isActive("/farms")}>
+            <Tree size={20} variant={isActive("/farms") ? "Bold" : "Linear"} />
           </MobileNavItem>
           <MobileNavItem href="/orders" label={t("nav.orders")} active={isActive("/orders")}>
             <Box size={20} variant={isActive("/orders") ? "Bold" : "Linear"} />
