@@ -18,7 +18,6 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <LogoImage light className="h-9 w-[170px]" />
-            <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-100/60">{t("footer.tagline")}</p>
             <p className="mt-3 max-w-xs text-sm text-emerald-100/70">{t("footer.blurb")}</p>
             <div className="mt-4 flex gap-2">
               {[Instagram, Facebook, Youtube].map((Icon, i) => (
