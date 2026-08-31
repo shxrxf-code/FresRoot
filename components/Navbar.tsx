@@ -3,7 +3,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { SearchNormal, Heart, ShoppingBag, User, Menu, CloseCircle, ArrowDown2, ArrowRight2, Tag, Home, ShoppingCart, Box, Tree } from "iconsax-react";
+import { SearchNormal, Heart, ShoppingBag, User, Menu, CloseCircle, ArrowDown2, ArrowRight2, Tag, Home, Home2, ShoppingCart, Box } from "iconsax-react";
 import { LogoImage } from "./ui/LogoImage";
 import { Avatar } from "./ui/avatar";
 import { useCart } from "@/stores/cart";
@@ -305,8 +305,8 @@ export function Navbar() {
           <MobileNavItem href="/shop" label={t("nav.shop")} active={isActive("/shop")}>
             <ShoppingCart size={20} variant={isActive("/shop") ? "Bold" : "Linear"} />
           </MobileNavItem>
-          <MobileNavItem href="/farms" label={t("nav.ourFarms")} active={isActive("/farms")}>
-            <Tree size={20} variant={isActive("/farms") ? "Bold" : "Linear"} />
+          <MobileNavItem href="/farms" label={t("nav.farms")} active={isActive("/farms")}>
+            <Home2 size={20} variant={isActive("/farms") ? "Bold" : "Linear"} />
           </MobileNavItem>
           <MobileNavItem href="/orders" label={t("nav.orders")} active={isActive("/orders")}>
             <Box size={20} variant={isActive("/orders") ? "Bold" : "Linear"} />

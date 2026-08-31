@@ -8,6 +8,7 @@ export const ar: Record<string, string> = {
   "nav.millets": "الدخن",
   "nav.farmBoxes": "صناديق المزرعة",
   "nav.ourFarms": "مزارعنا",
+  "nav.farms": "المزارع",
   "nav.subscriptions": "الاشتراكات",
   "nav.offers": "العروض",
   "nav.wishlist": "المفضلة",
